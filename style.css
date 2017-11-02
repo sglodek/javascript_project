@@ -1,0 +1,25 @@
+body,html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+#container {
+  height: 100%;
+  width: 100%;
+
+}
+#row {
+  box-sizing: border-box;
+  width: 960px;
+}
+
+.gridsquare {
+  box-sizing: border-box;
+  background: black;
+  display: inline-block;
+  border: 1px solid red;
+}
+
+.clicked {
+  background: white;
+}

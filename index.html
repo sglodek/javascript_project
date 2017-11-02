@@ -6,9 +6,49 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button>Reset</button>
+  <div id="container">
+</div>
 
 <script>
+function buildGrid() {
+  var a = prompt("How many tiles you want son?");
+  var i = 0;
+  while (i < a) {
+    var b = 0;
+    var row = document.createElement("div");
+    row.id = "row";
+    document.getElementById("container").appendChild(row)
+    while (b < a) {
+      var gridsquare = document.createElement("div");
+      gridsquare.className = "gridsquare";
+      row.appendChild(gridsquare)
+      gridsquare.style.width = (960 / a) + "px";
+      gridsquare.style.height = (960 / a) + "px";
+      b++;
+    }
+  i++;
+  }
+}
 
+function mouseover(e) {
+  this.classList.toggle("clicked");
+}
+
+function resetGrid() {
+  var div = document.getElementById('container');
+  while(div.firstChild){
+      div.removeChild(div.firstChild)};
+  buildGrid();
+}
+
+buildGrid();
+
+btn = document.querySelector("button");
+
+btn.addEventListener("mousedown", resetGrid);
+cells = document.querySelectorAll(".gridsquare");
+cells.forEach(div => div.addEventListener("mousedown", mouseover));
 </script>
 
 
